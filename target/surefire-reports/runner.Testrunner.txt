@@ -1,25 +1,46 @@
 -------------------------------------------------------------------------------
 Test set: runner.Testrunner
 -------------------------------------------------------------------------------
-Tests run: 18, Failures: 0, Errors: 3, Skipped: 8, Time elapsed: 20.246 s <<< FAILURE! - in runner.Testrunner
-| Speaking | JavaScript |.And Adicionar a la colección del usuario Add to Your Collection  Time elapsed: 0.003 s  <<< ERROR!
-java.lang.Exception: No se pudo realizar clic sobre el elemento By.xpath: //button[.='Add To Your Collection']
-	at pom.BasePage.click(BasePage.java:43)
-	at pom.ToolsQAPage.añadirLibroSpeaking(ToolsQAPage.java:68)
-	at seleniumgluecode.Test_TootlsQA.adicionar_a_la_colección_del_usuario_Add_to_Your_Collection(Test_TootlsQA.java:48)
+Tests run: 18, Failures: 0, Errors: 3, Skipped: 8, Time elapsed: 20.839 s <<< FAILURE! - in runner.Testrunner
+| Speaking | JavaScript |.And Adicionar a la colección del usuario Add to Your Collection  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.Exception: 
+No se pudo cerrar el elemento org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=102.0.5005.115)
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'LAPTOP-4OG1FF9J', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_111'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.115, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\jason\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56767}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ed91a878f7b6841b9123103e602edd1c
+	at pom.BasePage.cerrarModales(BasePage.java:52)
+	at pom.ToolsQAPage.añadirLibroSpeaking(ToolsQAPage.java:71)
+	at seleniumgluecode.Test_TootlsQA.adicionar_a_la_colección_del_usuario_Add_to_Your_Collection(Test_TootlsQA.java:51)
 	at ✽.And Adicionar a la colección del usuario Add to Your Collection(ToolsQA.feature:16)
 
-Examples: .| Speaking | JavaScript |  Time elapsed: 0.006 s  <<< ERROR!
-java.lang.Exception: No se pudo realizar clic sobre el elemento By.xpath: //button[.='Add To Your Collection']
-	at pom.BasePage.click(BasePage.java:43)
-	at pom.ToolsQAPage.añadirLibroSpeaking(ToolsQAPage.java:68)
-	at seleniumgluecode.Test_TootlsQA.adicionar_a_la_colección_del_usuario_Add_to_Your_Collection(Test_TootlsQA.java:48)
+Examples: .| Speaking | JavaScript |  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.Exception: 
+No se pudo cerrar el elemento org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=102.0.5005.115)
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'LAPTOP-4OG1FF9J', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_111'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.115, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\jason\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56767}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ed91a878f7b6841b9123103e602edd1c
+	at pom.BasePage.cerrarModales(BasePage.java:52)
+	at pom.ToolsQAPage.añadirLibroSpeaking(ToolsQAPage.java:71)
+	at seleniumgluecode.Test_TootlsQA.adicionar_a_la_colección_del_usuario_Add_to_Your_Collection(Test_TootlsQA.java:51)
 	at ✽.And Adicionar a la colección del usuario Add to Your Collection(ToolsQA.feature:16)
 
-Examples: .| Speaking | JavaScript |  Time elapsed: 0.81 s  <<< ERROR!
-java.lang.Exception: No se pudo realizar clic sobre el elemento By.xpath: //button[.='Add To Your Collection']
-	at pom.BasePage.click(BasePage.java:43)
-	at pom.ToolsQAPage.añadirLibroSpeaking(ToolsQAPage.java:68)
-	at seleniumgluecode.Test_TootlsQA.adicionar_a_la_colección_del_usuario_Add_to_Your_Collection(Test_TootlsQA.java:48)
+Examples: .| Speaking | JavaScript |  Time elapsed: 0.951 s  <<< ERROR!
+java.lang.Exception: 
+No se pudo cerrar el elemento org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=102.0.5005.115)
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'LAPTOP-4OG1FF9J', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_111'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.115, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\jason\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56767}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ed91a878f7b6841b9123103e602edd1c
+	at pom.BasePage.cerrarModales(BasePage.java:52)
+	at pom.ToolsQAPage.añadirLibroSpeaking(ToolsQAPage.java:71)
+	at seleniumgluecode.Test_TootlsQA.adicionar_a_la_colección_del_usuario_Add_to_Your_Collection(Test_TootlsQA.java:51)
 	at ✽.And Adicionar a la colección del usuario Add to Your Collection(ToolsQA.feature:16)
 
