@@ -8,6 +8,7 @@ import cucumber.api.java.en.When;
 
 public class Test_TootlsQA extends TestBase{
 
+    @Test
     @Given("^Ingresar al sitio ToolsQA")
     public void ingresar_al_sitio_ToolsQA() throws Throwable {
         toolsQAPage.welcome();
