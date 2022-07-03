@@ -20,7 +20,7 @@ Feature: Escribir los escenarios que se requieran en gherkin (Cucumber) y automa
       And Seleccionar el libro Programming JavaScript Applications
       And Regresar a la canasta o colección Profile
       Then Se deben visualizar los libros  seleccionados Speaking JavaScript y Programming JavaScript Applications
-      And Eliminar de la canasta o coleccion Speaking JavaScript
+      #And Eliminar de la canasta o coleccion Speaking JavaScript
       Then Salir del sitio Log out
 
       Examples:
