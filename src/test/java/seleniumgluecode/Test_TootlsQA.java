@@ -5,22 +5,20 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.Test;
 
 
 public class Test_TootlsQA extends TestBase{
 
-    @Test
         @Given("^Ingresar al sitio ToolsQA")
         public void ingresar_al_sitio_ToolsQA() throws Throwable {
             toolsQAPage.welcome();
         }
-    @Test
+
         @When("^Escribir el usuario$")
         public void escribir_el_usuario() throws Throwable {
             toolsQAPage.ingresarUsuario();
         }
-    @Test
+
         @And("^Escribir la contraseña")
         public void escribir_la_contraseña() throws Throwable {
             toolsQAPage.ingresarContrasena();
@@ -64,7 +62,7 @@ public class Test_TootlsQA extends TestBase{
         @And("^Seleccionar el libro Programming JavaScript Applications$")
         public void seleccionar_el_libro_Programming_JavaScript_Applications() throws Throwable {
             toolsQAPage.SeleccionarLibroJava();
-            toolsQAPage.añadirLibroJavaScript();
+            //toolsQAPage.añadirLibroJavaScript();
             toolsQAPage.ClickPerfil();
         }
 

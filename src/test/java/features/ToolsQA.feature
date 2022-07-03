@@ -13,7 +13,7 @@ Feature: Escribir los escenarios que se requieran en gherkin (Cucumber) y automa
       Given Ir a la tienda de libros Go to Book Store
       And Buscar en la tienda de libros, los libros que tengan la palabra1 "<palabra1>"
       When Seleccionar el libro Speaking
-      And Adicionar a la colección del usuario Add to Your Collection
+      #And Adicionar a la colección del usuario Add to Your Collection
       And Regresar a la canasta o colección Profile
       And Ir a la tienda de libros Go to Book Store
       And Buscar en la tienda de libros, los libros que tengan la palabra2 "<palabra2>"
