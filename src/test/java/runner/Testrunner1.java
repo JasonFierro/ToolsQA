@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         plugin = {"json:Report/Test/cucumber_report.json"},
         tags = {"@Consulta"} // Se pueden ejecutar desde los tags de los features que desean
 )
-public class Testrunner1 {
+public class Testrunner {
     // Para los reportes es necesario tener instalado NodeJS en su PC
     @AfterClass
     public static void finish(){
