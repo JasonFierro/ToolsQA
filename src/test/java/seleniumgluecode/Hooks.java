@@ -1,8 +1,8 @@
 package seleniumgluecode;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Order;
 import org.openqa.selenium.OutputType;
@@ -39,8 +39,8 @@ public class Hooks {
     @After
     public void TearDown(Scenario scenario){
         System.out.println("El escenario # "+ numberOfCase +" se ejecutó correctamente");
-        byte[] screenshot = ((TakesScreenshot)driverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
-        scenario.embed(screenshot, "image/png");
+//        byte[] screenshot = ((TakesScreenshot)driverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
+//        scenario.embed(screenshot, "image/png");
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         System.out.println("Fecha y hora ejecución finalizada: "+dtf.format(LocalDateTime.now()));
         System.out.println("");
