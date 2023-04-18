@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.*;
 
 import java.sql.*;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -182,7 +183,7 @@ public class BasePage{
      */
     protected void waitImplicit(By locator) {
         try {
-            WebDriverWait myWaitVar = new WebDriverWait(driver, 20);
+            WebDriverWait myWaitVar = new WebDriverWait(driver, Duration.ofSeconds(20));
             myWaitVar.until(ExpectedConditions.visibilityOfElementLocated(locator));
         } catch (Exception e) {
             System.out.print("No se encontro el localizador: " + locator);

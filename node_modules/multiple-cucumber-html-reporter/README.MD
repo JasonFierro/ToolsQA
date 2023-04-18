@@ -1,6 +1,7 @@
 Multiple Cucumber HTML Reporter
 ===============================
-[![Join the chat at https://gitter.im/wswebcreation/protractor-cucumber-typescript-boilerplate](https://badges.gitter.im/wswebcreation/multiple-cucumber-html-reporter.svg)](https://gitter.im/wswebcreation/multiple-cucumber-html-reporter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![dependencies Status](https://david-dm.org/wswebcreation/multiple-cucumber-html-reporter/status.svg)](https://david-dm.org/wswebcreation/multiple-cucumber-html-reporter) [![Build Status](https://travis-ci.org/wswebcreation/multiple-cucumber-html-reporter.svg?branch=master)](https://travis-ci.org/wswebcreation/multiple-cucumber-html-reporter) [![Coverage Status](https://coveralls.io/repos/github/wswebcreation/multiple-cucumber-html-reporter/badge.svg?branch=master)](https://coveralls.io/github/wswebcreation/multiple-cucumber-html-reporter?branch=master)
+[![Join the chat at https://gitter.im/wswebcreation/protractor-cucumber-typescript-boilerplate](https://badges.gitter.im/wswebcreation/multiple-cucumber-html-reporter.svg)](https://gitter.im/wswebcreation/multiple-cucumber-html-reporter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+![example workflow](https://github.com/wswebcreation/multiple-cucumber-html-reporter/actions/workflows/test.yml/badge.svg)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 [![NPM](https://nodei.co/npm/multiple-cucumber-html-reporter.png)](https://nodei.co/npm/multiple-cucumber-html-reporter/)
@@ -13,10 +14,13 @@ Multiple Cucumber HTML Reporter is a reporting module for Cucumber to parse the 
 - a feature(s) overview with metadata of the used browser(s) / devices
 
 # Important
-
 > **The default time notation in Cucumber is in nanoseconds. When you use a version of Cucumber that uses milliseconds (like CucumberJS 2 and 3) and you want to show the duration you should use [`displayDuration`](./README.MD#displayDuration) AND [`durationInMS = true`](./README.MD#durationinms)**
 
 ![Snapshot - Features overview](./docs/images/browsers-features-overview.jpg "Snapshot - Browsers features overview")
+
+or with dark mode enabled
+![image](https://user-images.githubusercontent.com/6072775/170474502-609d7e56-a7d4-42f1-80a5-c1cb0deee807.png)
+![image](https://user-images.githubusercontent.com/6072775/170474592-915efcbb-2587-4c52-984d-e0900cf19b0b.png)
 
 A sample can be found [here](https://wswebcreation.github.io/multiple-cucumber-html-reporter/browsers/index.html)
 
@@ -94,8 +98,6 @@ Since cucumber-js 3.x the `AfterFeatures` hook is not supported anymore. To use 
 
 > **Advice** is to use for example the name of the feature, the name of the browser / device it is running on AND a unix timestamp with for example this `(new Date).getTime();`. This will result in something like this `name_of_feature.chrome.1495298685509.json`
 
->
-
 ## Options
 ### `jsonDir`
 - **Type:** `String`
@@ -115,18 +117,21 @@ The directory in which the report needs to be saved, relative from where the scr
 
 ### `staticFilePath`
 - **Type:** `boolean`
+- **Default:** `false`
 - **Mandatory:** No
 
 If true each feature will get a static filename for the html. Use this feature only if you are not running multiple instances of the same tests.
 
 ### `openReportInBrowser`
 - **Type:** `boolean`
+- **Default:** `false`
 - **Mandatory:** No
 
 If true the report will automatically be opened in the default browser of the operating system.
 
 ### `saveCollectedJSON`
 - **Type:** `boolean`
+- **Default:** `false`
 - **Mandatory:** No
 
 This module will first merge all the JSON-files to 1 file and then enrich it with data that is used for the report. If `saveCollectedJSON :true` the merged JSON **AND** the enriched JSON will be saved in the `reportPath`. They will be saved as:
@@ -136,8 +141,8 @@ This module will first merge all the JSON-files to 1 file and then enrich it wit
 
 ### `disableLog`
 - **Type:** `boolean`
-- **Mandatory:** No
 - **Default:** `false`
+- **Mandatory:** No
 
 This will disable the log so will **NOT** see this.
 
@@ -167,8 +172,28 @@ You can change the report name to a name you want
 
 You can customise Page Footer if required. You just need to provide a html string like `<div><p>A custom footer in html</p></div>`
 
+### `plainDescription`
+- **Type:** `boolean`
+- **Default:** `false`
+- **Mandatory:** No
+
+The feature description is assumed to be a simple string and the library formats it accordingly, by copying it inside a
+paragraph tag. Since the description can be any free text, it can also be as complex as a full `div`, e.g.:
+
+```html
+<div>
+    <p><strong>Test description  </strong> : The test implements comparisons using all our datatypes</p>
+    <p><strong>Expected result   </strong> : Device does not reset</p>
+    <p><strong>Feature type      </strong> : Robustness</p>
+    <p><strong>Comments          </strong> : Test covers comparison operators</p>
+</div>
+```
+
+If the description already include formatting tags you can include it _as is_ by setting `plainDescription` to `true`.
+
 ### `displayDuration`
 - **Type:** `boolean`
+- **Default:** `false`
 - **Mandatory:** No
 
 If set to `true` the duration of steps, scenarios and features is displayed on the Features overview and single feature page in an easily readable format.
@@ -181,7 +206,7 @@ This expects the durations in the report to be in **nanoseconds**, which might r
 - **Default:** `false`
 - **Mandatory:** No
 
-If set to `true` the duration of steps will be expected to be in **milliseconds**, which might result in incorrect durations when using a version of Cucumber(JS 1 or 4) that does report in **nanaseconds**.
+If set to `true` the duration of steps will be expected to be in **milliseconds**, which might result in incorrect durations when using a version of Cucumber(JS 1 or 4) that does report in **nanoseconds**.
 This parameter relies on `displayDuration: true`
 
 ### `hideMetadata`
@@ -200,6 +225,7 @@ If set to `true` the date and time at which the JSON-files were generated, is di
 
 ### `useCDN`
 - **Type:** `boolean`
+- **Default:** `false`
 - **Mandatory:** No
 
 If you prefer, you can use CDN for assets.
@@ -208,14 +234,35 @@ If you prefer, you can use CDN for assets.
 - **Type:** `path`
 - **Mandatory:** No
 
-If you need add some custom style to your report. Add it like this `customStyle: 'your-path-where/custom.css'`
+If you need to add some custom style to your report. Add it like this `customStyle: 'your-path-where/custom.css'`
+Customization is now possible also for the doughnut chart by using [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).
+The user can define colors for the chart by defining variables for the different categories as follows:
+```css
+:root {
+  --ambiguous-color:#AAAAAA;
+  --failed-color:#BBBBBB;
+  --not-defined-color:#CCCCCC;
+  --passed-color:#DDDDDD;
+  --pending-color:#EEEEEE;
+  --skipped-color:#FFFFFF;
+}
+```
+Please note that these colors do _not_ affect the main colors CSS. To have homogeneous styling you can simply link those
+colors to the variables, e.g.:
+
+```css
+.ambiguous-color {
+    color: var(--ambiguous-color) !important;
+}
+```
+Please refer to the `test` directory and the `embedded-array` test report for a complete color customization example.
 
 ### `overrideStyle`
 - **Type:** `path`
 - **Mandatory:** No
 
-If you need replace default style for your report. Add it like this `overrideStyle: 'your-path-where/custom.css'`
-
+If you need to replace completely the default style for your report. Add it like this `overrideStyle: 'your-path-where/custom.css'`
+Please refer to the `test` directory for an example.
 
 ### `metadata`
 - **Type:** `JSON`
@@ -244,6 +291,7 @@ See [metadata](./README.MD#metadata-1) for more info
 
 ### `customMetadata`
 - **Type:** `boolean`
+- **Default:** `false`
 - **Mandatory:** No
 
 It is possible to provide custom metadata by setting this variable to `true`. Custom metadata will override the regular metadata completely and potentially have strange formatting bugs if too many (10+) variables are used.
@@ -264,6 +312,8 @@ On the features overview page the custom metadata is shown like:
 
 >**IMPORTANT:**
 > This does not work correctly if features have different sets of metadata. Try to avoid this situation.
+
+> **Much like with metadata, if you provide the custom metadata when instantiating `multi-cucumber-html-reporter` the metadata will be added to each feature. If you already have metadata in your JSON then the metadata in the JSON will take precedence**
 
 ### `customData`
 - **Type:** `object`
@@ -306,7 +356,7 @@ data: [
 ```
 
 ## Metadata
-The report can also show on which browser / device a feature has been executed. It is shown on the featurs overview in the table as well as on the feature overview in a container.
+The report can also show on which browser / device a feature has been executed. It is shown on the features overview in the table as well as on the feature overview in a container.
 
 ### Adding metadata to the Cucumber JSON
 
@@ -404,7 +454,7 @@ The advantage of this is that when you look at the folder where the Cucumber JSO
 - on which browser
 - a timestamp to see which feature has been executed the last (if featurename and browser are the same)
 
-### Metdata shows `not known` or not the correct icons
+### Metadata shows `not known` or not the correct icons
 There could be 2 causes:
 
  1. The metadata has not (correctly) been added to the Cucumber JSON.
@@ -420,7 +470,7 @@ You can attach screenshots at any time to a Cucumber JSON file. Just create a Cu
 ### How to attach Plain Text to HTML report
 You can attach plain-text / data at any time to a Cucumber JSON file to help debug / review the results. You can add them during running or when a `scenario` failed.
 
-> Check the framework you are using to attach plain text to the JSON file.
+> Check the framework you are using to attach plain text to the JSON file. Please make sure to convert binary/non-readable data to a suitable textual representation, e.g. via Base64 encoding.
 
 ### How to attach pretty JSON to HTML report
 You can attach JSON at any time to a Cucumber JSON file. You can add them during running or when a `scenario` failed.

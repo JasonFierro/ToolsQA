@@ -20,7 +20,7 @@
                     <p class="">Status</p>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                    <p class="">Progress</p>
+                    <p class="" style="float:right;">Progress</p>
                 </div>
             </th>
         </tr>
@@ -70,7 +70,7 @@
                                 Not Defined
                             </p>
                         </td>
-                        <td class="percentage"><%= suite.featureCount.notdefinedPercentage %> %</td>
+                        <td class="percentage"><%= suite.featureCount.notDefinedPercentage %> %</td>
                     </tr>
                     <%}%>
                     <%if(suite.featureCount.pending > 0){%>

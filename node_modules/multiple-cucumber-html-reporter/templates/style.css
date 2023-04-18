@@ -7,7 +7,7 @@ body {
     line-height: 1.471;
 }
 
-.main_conainer {
+.main_container {
     padding: 10px 20px 0;
 }
 
@@ -19,7 +19,11 @@ i span {
 nav.navbar {
     background: #EDEDED;
     border-bottom: 1px solid #D9DEE4;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
+}
+
+filter-i {
+    margin-left: 5px;
 }
 
 nav .navbar-brand {
@@ -33,6 +37,7 @@ nav .navbar-text {
     margin-bottom: 0;
     margin-top: 0;
     padding: 15px 0;
+    float: right;
 }
 
 /* Table */
@@ -245,10 +250,6 @@ table td.chart .total {
     height: 320px;
 }
 
-.x_title h2 small {
-    margin-left: 10px;
-}
-
 .x_title span {
     color: #BDBDBD;
 }
@@ -301,7 +302,9 @@ table td.chart .total {
 }
 
 .page-title h1 {
-    margin: 9px 0;
+    margin: 9px 0 9px 13px;
+    font-size: 30px;
+
 }
 
 .page-title .title_right {
@@ -458,4 +461,102 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
 .created-by {
     padding: 50px 0;
     text-align: center;
+}
+
+body.darkmode,
+body.darkmode div.x_panel,
+body.darkmode div.container-fluid,
+body.darkmode div.created-by,
+body.darkmode .dropdown-menu,
+body.darkmode #features-table th
+{
+    background-color: #181616 !important;
+    color: #eee;
+    border-color: gray;
+}
+
+#features-table > thead > tr {
+    color: steelblue;
+}
+
+.darkModeIcon {
+    font-size: x-large;
+    float: left;
+    padding-top: 12px;
+    cursor: pointer;
+}
+
+.darkModeIcon:before {
+    content: '';
+}
+
+body.darkmode li:not([class])>a[id] {
+    color: white;
+}
+body.darkmode li:not([class])>a[id]:hover {
+    background: darkslateblue;
+}
+
+body.darkmode #features-table th {
+    background-color: #3e3939 !important;
+    color: #c3c3c3;
+    border-color: gray;
+}
+
+body.darkmode .form-control {
+    background-color: #3e3939 !important;
+    color: #c3c3c3;
+}
+body.darkmode li[id*=features]>a {
+    background-color: #3e3939 !important;
+}
+
+body.darkmode .btn-info {
+    color: #eee;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+body.darkmode .panel_toolbox > li > a:hover {
+    background: transparent;
+}
+
+body.darkmode div pre {
+    background-color: #3e3939 !important;
+    color: #eee;
+}
+
+body.darkmode span.tag {
+    color: #FFD119;
+}
+
+body.darkmode .keyword {
+    color: #d2691e;
+}
+
+body.darkmode div.tags ~h1 {
+    color: #d2691e;
+}
+
+body.darkmode div.tags ~h2 {
+    color: #d2691e;
+}
+
+svg#moon, svg#sun {
+    width: 40px;
+    height: 30px;
+    fill: #ff4500;
+}
+
+input#darkCheck:checked ~ label>svg#sun {
+    display: none;
+}
+
+label>svg#moon {
+    display: none;
+}
+
+input#darkCheck:checked ~ label>svg#moon {
+    display: inline-block;
+    fill: #ffe4c4;
 }

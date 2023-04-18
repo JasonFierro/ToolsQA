@@ -3,8 +3,6 @@ package seleniumgluecode;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Order;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -12,10 +10,11 @@ import runner.browser_manager.DriverManager;
 import runner.browser_manager.DriverManagerFactory;
 import runner.browser_manager.DriverType;
 
-import java.text.DateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
+
+import static models.ScreenRecorder.MyScreenRecorder.*;
 
 public class Hooks {
 
@@ -37,7 +36,7 @@ public class Hooks {
     }
 
     @After
-    public void TearDown(Scenario scenario){
+    public void TearDown(Scenario scenario) throws Exception {
         System.out.println("El escenario # "+ numberOfCase +" se ejecutó correctamente");
 //        byte[] screenshot = ((TakesScreenshot)driverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
 //        scenario.embed(screenshot, "image/png");
@@ -45,6 +44,7 @@ public class Hooks {
         System.out.println("Fecha y hora ejecución finalizada: "+dtf.format(LocalDateTime.now()));
         System.out.println("");
         System.out.println("");
+        stopRecording();
         driverManager.quitDriver();
     }
 

@@ -1,14 +1,17 @@
-package seleniumgluecode;
+package seleniumgluecode.Consulta;
 
-import io.cucumber.java.en.*;
-import io.cucumber.junit.*;
-import org.openqa.selenium.WebDriver;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+import seleniumgluecode.TestBase;
+
+import static models.ScreenRecorder.MyScreenRecorder.*;
 
 public class consultaObligacionDefinition extends TestBase {
 
-
-    @Given("^Ingresar al sitio DIAN$")
-    public void ingresarAlSitioDIAN() throws InterruptedException {
+    @Given("^Ingresar al sitio DIAN \"([^\"]*)\"$")
+    public void ingresarAlSitioDIAN(String recorder) throws Exception {
+        startRecording(recorder);
         ConsultaObligacionPage.pageDIAN();
     }
 
@@ -52,7 +55,18 @@ public class consultaObligacionDefinition extends TestBase {
         ConsultaObligacionPage.clic_ingresar();
     }
 
-    @And("^Validar$")
-    public void validar() {
+    @When("Ingresar al modulo Consulta Obligacion")
+    public void ingresarAlModuloConsultaObligacion() throws Exception {
+        ConsultaObligacionPage.ingresarModuloConsultaObligacion();
+    }
+
+    @And("Validar el saldo a favor")
+    public void validarElSaldoAFavor() throws Exception {
+        ConsultaObligacionPage.saldoFavor();
+    }
+
+    @And("Click en ver detalle y validar el numero obligacion {string}")
+    public void clickEnVerDetalleYValidarElNumeroObligacion(String numObligacion) throws InterruptedException {
+        ConsultaObligacionPage.validarNumObligacion(numObligacion);
     }
 }
