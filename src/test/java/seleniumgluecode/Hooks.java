@@ -31,7 +31,7 @@ public class Hooks {
     System.out.println("Fecha y hora de ejecución: "+dtf.format(LocalDateTime.now()));
     driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
     driver = driverManager.getDriver();
-    driver.get("https://demoqa.com/login");
+    driver.get("https://www.dian.gov.co/");
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }

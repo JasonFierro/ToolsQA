@@ -5,6 +5,6 @@ import pom.*;
 public class TestBase {
 
     protected WebDriver driver = Hooks.getDriver();
-    protected ToolsQAPage toolsQAPage = new ToolsQAPage(driver);
+    protected siisimpopage Siis = new siisimpopage(driver);
 
 }
