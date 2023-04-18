@@ -1,7 +1,6 @@
-package seleniumgluecode;
+package runner;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.*;
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 
@@ -11,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/java/features/",
         glue = {"seleniumgluecode"},
         plugin = {"json:Report/Test/cucumber_report.json"},
-        tags = {"@Consulta"} // Se pueden ejecutar desde los tags de los features que desean
+        tags = "@Consulta" // Se pueden ejecutar desde los tags de los features que desean
 )
 public class Testrunner {
     // Para los reportes es necesario tener instalado NodeJS en su PC

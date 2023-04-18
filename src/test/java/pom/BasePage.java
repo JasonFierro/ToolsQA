@@ -85,6 +85,21 @@ public class BasePage{
     }
 
     /**
+     * Esta acción permite seleccionar de una lista desplegable el texto solicitado
+     * @param texto se debe enviar en tipo String el texto que se solicita de la lista desplegable
+     * @param locator es el localizador o campo al cual le vamos a relizar la acción
+     */
+    protected void selectElement(String texto,By locator){
+        try {
+            Select select = new Select(driver.findElement(locator));
+            select.selectByVisibleText(texto);
+        } catch(Exception e) {
+            System.out.print("No se selecciono el localizador: " + locator);
+            driver.quit();
+        }
+    }
+
+    /**
      * Esta acción permite confirmar si un texto tipo String es igual a otro texto o objeto esperado convertido
      * en String, tienen la misma información
      * @param textExpected se envia un texto o objeto tipo String para ser validado contra el localizador
